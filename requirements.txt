@@ -1,2 +1,3 @@
-instabot
-python-dotenv
+undetected-chromedriver>=3.5.0
+python-dotenv>=1.0.1
+selenium>=4.15.0
