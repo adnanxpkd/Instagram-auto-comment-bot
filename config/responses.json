@@ -1,0 +1,9 @@
+{
+    "default": "Thanks for commenting! We appreciate your support 💖",
+    "triggers": {
+        "awesome": "Glad you liked it! 🔥",
+        "amazing": "We're thrilled you think so! ✨",
+        "\\?": "Please DM us for questions! 💬",
+        "bad": "We're sorry to hear that. DM us to improve! 🛠️"
+    }
+}
