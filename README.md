@@ -1,128 +1,133 @@
-**README.md**
+````markdown
+# 🤖 Instagram Auto Comment Bot
 
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-brightgreen)](https://www.python.org/)
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red)]()
 
-# 📸 Instagram Auto Comment Reply Bot
-
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Deploy](https://img.shields.io/badge/Deploy-Render%20|%20Railway-orange)](https://render.com/)
-
-An automated **Instagram bot** built with Python that continuously monitors your post and **replies to comments**.  
-Customizable, safe-paced, and deployable 24/7 on cloud platforms.
+Automate your Instagram comments with style ⚡.  
+This bot listens for posts and automatically comments with predefined or AI-powered replies.  
+Perfect for engagement, campaigns, or just having fun 😎.
 
 ---
 
 ## ✨ Features
 
-- 🔑 **Keyword-based replies** – define triggers and custom responses.  
-- 📝 **Default fallback reply** – ensures every comment gets attention.  
-- 🕒 **Human-like behavior** – built-in delays to reduce spam detection.  
-- 🔄 **Continuous monitoring** – checks for new comments every minute.  
-- ☁️ **Deploy anywhere** – Render, Railway, PythonAnywhere, or VPS.  
+- 🔄 **Auto-comment** on posts (by username, hashtags, or feed)  
+- 🎯 **Smart reply system** (randomized comments / AI-generated text)  
+- 🔒 **Session-based login** (no repeated logins)  
+- 📦 **Lightweight & Easy to Deploy** (run locally or on cloud 24/7)  
+- 🛡️ **Safety Controls** – delay system to avoid spam flags  
 
 ---
 
-## ⚙️ Setup
+## 📸 Demo
 
-### 1. Clone the Repository
+![Demo Bot](https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif)
+
+---
+
+## ⚡ Tech Stack
+
+- [Python 3.9+](https://www.python.org/)  
+- [Instagrapi](https://github.com/adw0rd/instagrapi) (Instagram private API)  
+- [SQLite](https://www.sqlite.org/) for storing sessions  
+- Optional: [OpenAI](https://platform.openai.com/) / [Gemini](https://ai.google.dev/) for AI comments  
+
+---
+
+## 🚀 Quick Start
+
+### 1️⃣ Clone the Repo
 ```bash
 git clone https://github.com/adnanxpkd/Instagram-auto-comment-bot.git
 cd Instagram-auto-comment-bot
-```
+````
 
-### 2. Install Dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment Variables
+### 3️⃣ Add Config
 
-1. Copy `.env.example` → `.env`
+Edit `config.json`:
 
-   ```bash
-   cp .env.example .env
-   ```
-2. Edit `.env` and add your details:
-
-   ```
-   INSTAGRAM_USERNAME=your_username
-   INSTAGRAM_PASSWORD=your_password
-   POST_LINK=https://www.instagram.com/p/POST_ID/
-   ```
-
-⚠️ **Never commit your real credentials** — keep `.env` private.
-
----
-
-## ▶️ Run Locally
-
-```bash
-python insta_bot.py
+```json
+{
+  "username": "your_username",
+  "password": "your_password",
+  "comments": [
+    "🔥 Awesome!",
+    "💯 Keep it up!",
+    "🚀 Amazing post!"
+  ],
+  "delay": 60
+}
 ```
 
-* Logs into Instagram with your credentials
-* Fetches comments on the given post
-* Replies with keyword-based or default messages
-* Loops every minute to catch new comments
-
----
-
-## ☁️ Deployment (24/7)
-
-### Render / Railway
-
-* Connect your GitHub repo
-* Set build command:
-
-  ```bash
-  pip install -r requirements.txt
-  ```
-* Set start command:
-
-  ```bash
-  python insta_bot.py
-  ```
-* Add environment variables:
-
-  * `INSTAGRAM_USERNAME`
-  * `INSTAGRAM_PASSWORD`
-  * `POST_LINK`
-
-### VPS / Raspberry Pi
-
-Run in background:
+### 4️⃣ Run the Bot
 
 ```bash
-nohup python insta_bot.py &
+python bot.py
 ```
 
 ---
 
-## 🔒 Safety Guidelines
+## ☁️ Deploy 24/7
 
-* ⏳ Always use delays (`time.sleep()`) to mimic human activity.
-* 🧪 Test on a **dummy account** first.
-* 🚫 Avoid replying to hundreds of comments instantly.
-* 📉 Spread activity across time to prevent account restrictions.
+You can keep the bot running 24/7 with:
+
+* [Railway](https://railway.app/)
+* [Render](https://render.com/)
+* [Koyeb](https://koyeb.com/)
+* [Heroku](https://heroku.com/) (with worker dyno)
+
+👉 Or use **GitHub Actions** to auto-run on schedule.
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── insta_bot.py        # Main bot logic
-├── requirements.txt    # Dependencies (instabot, python-dotenv)
-├── .env.example        # Sample environment variables
-└── README.md           # Documentation
+Instagram-auto-comment-bot/
+│── bot.py              # Main bot logic
+│── config.json         # User settings (edit this)
+│── requirements.txt    # Python dependencies
+│── utils.py            # Helper functions
+│── LICENSE             # MIT License
+│── README.md           # You’re here
 ```
+
+---
+
+## ⚠️ Safety Notes
+
+* Use test accounts first ⚡
+* Don’t spam → Instagram bans are real
+* Add delays between actions (`delay` in config)
+* Use responsibly 🙏
+
+---
+
+## 📊 Roadmap
+
+* [ ] Add hashtag-based auto-comment
+* [ ] Support AI comment generator (OpenAI/Gemini)
+* [ ] Docker setup for easier deployment
+* [ ] Web UI dashboard
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
-Feel free to **fork** this repo and submit a **pull request**.
+PRs are welcome!
+
+1. Fork it 🍴
+2. Create your branch 🌱
+3. Commit changes ✅
+4. Open PR 🚀
 
 ---
 
@@ -132,9 +137,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 👨‍💻 Author
-
-Built with ❤️ by **Adnan**
-📩 Got ideas? Open an [issue](../../issues) or ping me!
-
----
+💡 *Made with ❤️ by [Adnan](https://github.com/adnanxpkd)*
