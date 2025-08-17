@@ -1,6 +1,6 @@
 **README.md**
 
-````markdown
+
 # 📸 Instagram Auto Comment Reply Bot
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
@@ -28,7 +28,7 @@ Customizable, safe-paced, and deployable 24/7 on cloud platforms.
 ```bash
 git clone https://github.com/adnanxpkd/Instagram-auto-comment-bot.git
 cd Instagram-auto-comment-bot
-````
+```
 
 ### 2. Install Dependencies
 
